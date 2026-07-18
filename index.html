@@ -4,10 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
-<title>Asteria✨</title>
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icona.png">
-<meta name="apple-mobile-web-app-title" content="Asteria">
+<title>Asteria</title>
 <style>
   :root{
     --notte:#0B1A33; --glow:#143263; --pannello:#10264C; --bordo:#27477E;
@@ -87,20 +84,24 @@
 </head>
 <body data-filter="all" data-size="big">
 <div class="wrap">
-<header class="main-header">
-  <div class="toprow">
-    <div>
-      <h1>Spiritelli <span class="spark">✦</span></h1>
-      <div class="sub" id="sub">Capitolo 7 · Stagione 3 — tocca una figurina per spuntarla</div>
+  <header>
+    <div class="toprow">
+      <div>
+        <h1>Spiritelli <span class="spark">✦</span></h1>
+        <div class="sub" id="sub">Capitolo 7 · Stagione 3 — tocca una figurina per spuntarla</div>
+      </div>
+      <div class="counter"><span id="n">0</span><small>/110</small><span class="pct" id="pct">0%</span></div>
     </div>
-    <div class="user-profile">
-      <img src="https://via.placeholder.com/150" alt="Foto Profilo" class="profile-pic" id="userAvatar">
-      <span class="profile-name" id="userName">Allenatore</span>
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="chips">
+      <button class="chip fc on" data-f="all">Tutti</button>
+      <button class="chip fc" data-f="todo">Mancanti</button>
+      <button class="chip fc" data-f="done">Presi</button>
+      <span class="sep"></span>
+      <button class="chip sc on" data-s="big">Grandi</button>
+      <button class="chip sc" data-s="small">Compatte</button>
     </div>
-
-    <div class="counter"><span id="n">0</span><small>/110</small><span class="pct" id="pct">0%</span></div>
-  </div>
-</header>
+  </header>
   <main id="main"></main>
   <footer>
     <button class="reset" id="reset">Azzera progressi</button>
