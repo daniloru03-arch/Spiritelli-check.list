@@ -1,4 +1,4 @@
-const CACHE_NAME = 'asteria-cache-v1';
+const CACHE_NAME = 'asteria-v1';
 const ASSETS = [
   './',
   './index.html',
@@ -6,7 +6,7 @@ const ASSETS = [
   './icona.png'
 ];
 
-// Installa il Service Worker e salva i file nella cache
+// Installa il Service Worker
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -15,7 +15,12 @@ self.addEventListener('install', (e) => {
   );
 });
 
-// Gestisce le richieste per far funzionare il sito anche offline
+// Attiva il Service Worker
+self.addEventListener('activate', (e) => {
+  e.waitUntil(self.clients.claim());
+});
+
+// Gestisce le richieste offline
 self.addEventListener('fetch', (e) => {
   e.respondWith(
     caches.match(e.request).then((response) => {
