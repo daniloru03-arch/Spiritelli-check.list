@@ -240,5 +240,12 @@ rst.addEventListener('click', () => {
   refresh();
 })();
 </script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then(() => console.log('Service Worker pronto!'))
+      .catch((err) => console.log('Errore Service Worker:', err));
+  }
+</script>
 </body>
 </html>
